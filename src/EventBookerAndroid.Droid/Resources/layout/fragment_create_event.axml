@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create New Event"
+        android:textStyle="bold"
+        android:textSize="24sp"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Name"
+        app:MvxBind="Text EventName"
+    />
+
+    <EditText
+        android:id="@+id/event_date_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Date"
+        app:MvxBind="Text EventDate, Converter=DateTimeToDay"
+    />
+
+    <EditText
+        android:id="@+id/event_time_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Time"
+        app:MvxBind="Text EventTime, Converter=DateTimeToTime"
+    />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number of Tickets"
+        android:inputType="number"
+        app:MvxBind="Text TotalTickets, Mode=OneWayToSource"
+    />
+
+    <Button
+        android:id="@+id/btn_select_img"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Event Image"
+    />
+
+    <ImageView
+        android:id="@+id/img_event"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_mvvmcross_logo"
+    />
+
+    <Button
+        android:id="@+id/btn_finished"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finished"
+    />
+
+</LinearLayout>

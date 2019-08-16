@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+using Android.App;
+using Android.Content;
+using Android.OS;
+using Android.Runtime;
+using Android.Views;
+using Android.Widget;
+using EventBookerAndroid.Core.ViewModels;
+using EventBookerAndroid.Core.ViewModels.Main;
+using MvvmCross.Platforms.Android.Presenters.Attributes;
+
+namespace EventBookerAndroid.Droid.Views
+{
+    [MvxFragmentPresentation(typeof(MainContainerViewModel), Resource.Id.content_frame, true)]
+    public class EventDetailFragment : BaseFragment<EventDetailViewModel>
+    {
+        protected override int FragmentLayoutId => Resource.Layout.fragment_eventdetail;
+    }
+
+    
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView" >
+
+    <RelativeLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/relativeLayout" >
+
+        <ImageView
+            android:id="@+id/img_detail_event"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+        />
+
+        <TextView
+            android:id="@+id/txt_detail_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/img_detail_event"
+            android:textColor="#FFFFFF"
+            android:text="Event Name"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:background="#99000000"
+            local:MvxBind="Text SelectedEvent.EventName"
+        />
+
+        <TextView
+            android:id="@+id/txt_event_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_detail_event"
+            android:textSize="18sp"
+            local:MvxBind="Text SelectedEvent.EventDateTime, Converter=DateTimeToDay"
+        />
+
+        <TextView
+            android:id="@+id/txt_event_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_event_date"
+            android:textSize="18sp"
+            local:MvxBind="Text SelectedEvent.EventDateTime, Converter=DateTimeToTime"
+        />
+
+        <TextView
+            android:id="@+id/lbl_total_tickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txt_event_time"
+            android:textSize="18sp"
+            android:text="Total Tickets: "
+        />
+
+        <TextView
+            android:id="@+id/txt_total_tickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/lbl_total_tickets"
+            android:layout_toRightOf="@id/lbl_total_tickets"
+            android:layout_marginLeft="2dp"
+            android:textSize="18sp"
+            local:MvxBind="Text SelectedEvent.TotalTickets"
+        />
+
+        <TextView
+            android:id="@+id/lbl_avail_tickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_total_tickets"
+            android:text="Available Tickets: "
+            android:textSize="18sp"
+        />
+
+        <TextView
+            android:id="@+id/txt_avail_tickets"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/lbl_avail_tickets"
+            android:layout_toRightOf="@id/lbl_avail_tickets"
+            android:textSize="18sp"
+            local:MvxBind="Text SelectedEvent.AvailableTickets"
+        />
+
+        <Button
+            android:id="@+id/btn_buy_tickets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lbl_avail_tickets"
+            android:text="Buy Tickets"
+            android:textSize="18sp"
+        />
+
+        <Button
+            android:id="@+id/btn_show_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_buy_tickets"
+            android:text="Show Ticket History"
+            android:textSize="18sp"
+        />
+
+        <Button
+            android:id="@+id/btn_cancel_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btn_show_history"
+            android:background="#DA1C1C"
+            android:text="Cancel Event"
+            android:textSize="18sp"
+        />
+
+    </RelativeLayout>
+</ScrollView>
